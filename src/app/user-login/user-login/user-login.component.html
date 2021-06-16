@@ -1,0 +1,43 @@
+<div class="loginWrapper">
+<div class="p-d-flex p-jc-center">
+    <p-card>
+        <ng-template pTemplate="header">
+            <div class="p-col-12">
+                <h3>USER LOGIN</h3>
+            </div>
+        </ng-template>
+        <form #myForm="ngForm" autocomplete="off">
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12">
+                    <label>Email Address</label>
+                    <input type="email" #email="ngModel" pInputText [(ngModel)]="loginUser.email" name="email" required
+                    placeholder="Email Address" email>
+                    <span class="invalidDetails"
+                    *ngIf="(email.touched || myForm.submitted) && email.errors?.required">
+                    Email is required
+                </span>
+                <span class="invalidDetails" *ngIf="email.touched && email.errors?.email">
+                    Enter a valid email address
+                </span>
+                </div>
+                <div class="p-field p-col-12">
+                    <label>Password</label>
+                    <input type="password" placeholder="Password" pInputText  [(ngModel)]="loginUser.password" name="password"  #password="ngModel" required />
+                  <span *ngIf="(password.touched || myForm.submitted) && password.errors?.required" class="invalidDetails">Passsword required</span>
+                  </div>
+            </div>
+            <div class="rightAlign">
+              <button type="submit" class="fullWidthButton" pButton (click)="login()" [disabled]="myForm.invalid"  label="Login"></button>
+          </div>
+        </form>
+
+        <div class="invalidDetails" *ngIf="invalidDetails">
+          Invalid Email Or Password
+        </div>
+
+        <div class="p-col-12 centerAlign">
+            Not a user? <span [routerLink]="['../register']">Register Now</span>
+        </div>
+    </p-card>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.d-inline{
+    display: inline-block !important;
+    margin-right: 20px;
+}
+.toolbar{
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    background: gray
+
+}
+
+.addUser{
+  float: left;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.col-sm-12{
+    padding-top: 15px;
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+    i{
+        font-size: 20px;
+        padding-right: 20px;
+        cursor: pointer;
+    }
+}
+.leftPadding{
+    padding-left: 15px !important;
+    font-weight: bold;
+}

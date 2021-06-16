@@ -1,0 +1,59 @@
+<div class="loginWrapper">
+    <div class="p-d-flex p-jc-center">
+        <p-card>
+            <ng-template pTemplate="header">
+                <div class="p-col-12">
+                    <h3>USER REGISTRATION</h3>
+                </div>
+            </ng-template>
+            <form #myForm="ngForm" autocomplete="off">
+                <div class="p-fluid p-formgrid p-grid">
+                    <div class="p-field p-col-6">
+                        <label>First Name</label>
+                        <input type="text" #first_name="ngModel" placeholder="First Name" pInputText  [(ngModel)]="userRegister.first_name" name="first_name" required />
+                        <span *ngIf="(first_name.touched || myForm.submitted) && first_name.errors?.required" class="invalidDetails">First name required</span>
+
+                      </div>
+                    <div class="p-field p-col-6">
+                        <label>Last Name</label>
+                        <input type="text" #last_name="ngModel" placeholder="Last Name" pInputText   [(ngModel)]="userRegister.last_name" name="last_name" required />
+                        <span *ngIf="(last_name.touched || myForm.submitted) && last_name.errors?.required" class="invalidDetails">Last name required</span>
+
+                      </div>
+                    <div class="p-field p-col-6">
+                        <label>Email Address</label>
+                        <input type="email" #email="ngModel" pInputText [(ngModel)]="userRegister.email" name="email" required email
+                        placeholder="Email">
+
+                        <span class="invalidDetails"
+                        *ngIf="(email.touched || myForm.submitted) && email.errors?.required">
+                        Email is required
+                    </span>
+                    <span class="invalidDetails" *ngIf="email.touched && email.errors?.email">
+                        Enter a valid email address
+                    </span>
+
+                    </div>
+                    <div class="p-field p-col-6">
+                        <label>Password</label>
+                        <input type="password" #password="ngModel" placeholder="password" pInputText  [(ngModel)]="userRegister.password" name="password" required />
+                        <span *ngIf="(password.touched || myForm.submitted) && password.errors?.required" class="invalidDetails">Passsword required</span>
+
+                      </div>
+
+                </div>
+            </form>
+            <div class="rightAlign">
+                <button type="button" class="fullWidthButton" pButton [disabled]="myForm.invalid" (click)="registerUser()"  label="Register"></button>
+            </div>
+
+            <span class="validDetails" *ngIf="isRegistered">Register successfull</span>
+            <div class="p-col-12 centerAlign">
+                Already a user? <span [routerLink]="['../login']">Login Here</span>
+            </div>
+        </p-card>
+        </div>
+</div>
+
+
+

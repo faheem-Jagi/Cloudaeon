@@ -1,0 +1,40 @@
+.loginWrapper{
+    width: 100%;
+    height: 100vh;
+    background: rgb(23,242,255);
+    background: linear-gradient(304deg, rgba(23,242,255,1) 0%, rgba(61,65,255,1) 100%);
+}
+p-card{
+    margin-top: 9%;
+    width: 30%;
+}
+
+h3{
+  margin-top: 30px;
+  text-align: center;
+  color: #739eff;
+}
+
+
+.fullWidthButton{
+  width: 100%;
+}
+
+
+.rightAlign{
+  text-align: right;
+}
+.centerAlign{
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+  span{
+      color:#739eff;
+      cursor: pointer;
+  }
+}
+
+.invalidDetails{
+  color: red;
+
+}
